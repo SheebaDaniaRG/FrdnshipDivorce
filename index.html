@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friendship Divorce Agreement</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(to bottom, #0a0a0a, #400000);
+    color: white;
+    text-align: center;
+}
+
+.container {
+    padding: 40px;
+}
+
+h1 {
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 52px;
+    color: crimson;
+    text-shadow: 0 0 20px red;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #ffcccc;
+}
+
+.divorce-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.person img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid crimson;
+    box-shadow: 0 0 30px red;
+}
+
+.person h2 {
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+.agreement-box {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    margin: 40px auto;
+    width: 80%;
+    border: 2px solid crimson;
+    border-radius: 15px;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.agreement-box h3 {
+    text-align: center;
+    color: crimson;
+}
+
+.signature-container {
+    margin-top: 50px;
+}
+
+canvas {
+    border: 3px solid crimson;
+    background: white;
+    cursor: crosshair;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: crimson;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+button:hover {
+    background: darkred;
+}
+
+footer {
+    margin-top: 40px;
+    color: #aaa;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Friendship Divorce Agreement</h1>
+<p class="subtitle">Sealed under the Crimson Moonlight 🩸</p>
+
+<div class="divorce-section">
+
+<div class="person">
+    <img src="shiniya.jpg" alt="Shiniya">
+    <h2>Shiniya</h2>
+</div>
+
+<div class="person">
+    <img src="mohan.jpg" alt="Mohan Kumar">
+    <h2>Mohan Kumar</h2>
+</div>
+
+</div>
+
+<div class="agreement-box">
+<h3>Official Declaration</h3>
+
+<p>
+This agreement is officially declared on this day between:
+</p>
+
+<p>
+<b>Frnd 1:</b> Shiniya (The Supreme Vampire of Self-Respect)<br>
+<b>Frnd 2:</b> Mohan Kumar (Former Holder of the “Best Friend” Position)
+</p>
+
+<p>
+Shiniya hereby announces that she is COMPLETELY, ABSOLUTELY, and IRREVERSIBLY divorcing Mohan Kumar from all friendship privileges due to the following extremely serious and highly tragic offenses:
+</p>
+
+
+
+<p>
+Effective immediately:
+</p>
+
+<ul>
+<li>No more “bestie” privileges.</li>
+<li>No emotional support after 11:59 PM.</li>
+<li>No priority in gossip updates.</li>
+<li>All shared memories shall be archived permanently under “Expired Friendship Files”.</li>
+</ul>
+
+<p>
+This divorce is FINAL. There shall be no appeals, no reconsiderations, and no “let’s talk about it” meetings.
+</p>
+
+<p style="text-align:center; font-weight:bold; color:crimson;">
+Status: Officially Unfriended Forever 🩸
+</p>
+
+</div>
+
+<div class="signature-container">
+<h2>Sign Below to Seal the Fate</h2>
+<canvas id="signaturePad" width="500" height="200"></canvas>
+<br>
+<button onclick="clearCanvas()">Clear Signature</button>
+</div>
+
+<footer>
+Eternal Night Legal Department | Friendship Court 🕯️
+</footer>
+
+</div>
+
+<script>
+const canvas = document.getElementById("signaturePad");
+const ctx = canvas.getContext("2d");
+
+let drawing = false;
+
+canvas.addEventListener("mousedown", () => drawing = true);
+canvas.addEventListener("mouseup", () => {
+    drawing = false;
+    ctx.beginPath();
+});
+canvas.addEventListener("mousemove", draw);
+
+function draw(e) {
+    if (!drawing) return;
+    const rect = canvas.getBoundingClientRect();
+    ctx.lineWidth = 2;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = "black";
+    ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+}
+
+function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+</script>
+
+</body>
+</html>
